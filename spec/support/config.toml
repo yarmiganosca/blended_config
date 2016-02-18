@@ -1,6 +1,6 @@
 [colors]
-blue = "indigo"
-green = "lime"
-red = "maroon"
+blue   = "indigo"
+green  = "lime"
+red    = "maroon"
 purple = "aubergine"
 yellow = "mustard"
