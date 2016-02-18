@@ -13,9 +13,9 @@ RSpec.describe 'colors print' do
 
   let(:expected_output) do
     <<-OUT
-cobalt
+indigo
 lime
-brick
+crimson
 aubergine
 mustard
     OUT

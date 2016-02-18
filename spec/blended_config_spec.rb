@@ -19,23 +19,23 @@ RSpec.describe BlendedConfig do
       end
 
       it 'has the correct blue' do
-        expect(toml.colors.blue).to eq "cobalt"
+        expect(toml.colors.blue).to eq "indigo"
       end
 
       it 'has the correct green' do
-        expect(toml.colors.green).to eq "fern"
+        expect(toml.colors.green).to eq "lime"
       end
 
       it 'has the correct red' do
-        expect(toml.colors.red).to eq "brick"
+        expect(toml.colors.red).to eq "crimson"
       end
 
       it 'has the correct purple' do
-        expect(toml.colors.purple).to eq "violet"
+        expect(toml.colors.purple).to eq "aubergine"
       end
 
       it 'has the correct yellow' do
-        expect(toml.colors.yellow).to eq 'marigold'
+        expect(toml.colors.yellow).to eq 'mustard'
       end
     end
   end
