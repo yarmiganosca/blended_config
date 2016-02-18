@@ -11,7 +11,7 @@ RSpec.describe BlendedConfig do
         COLORS_PURPLE: "violet"
       )
     end
-    subject(:toml) { Config.new(file: config_file, env: environment) }
+    subject(:toml) { Config.new(toml: config_file, env: environment) }
 
     describe '#colors' do
       it 'is memoized' do

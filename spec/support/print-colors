@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require_relative 'config'
 
 config = Config.new(
-  file: Pathname.new(__FILE__).dirname/'config.toml'
+  toml: Pathname.new(__FILE__).dirname/'config.toml'
 )
 
 %w(blue green red purple yellow).each do |color|

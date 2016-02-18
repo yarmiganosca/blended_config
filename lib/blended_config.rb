@@ -27,15 +27,15 @@ class BlendedConfig
     @option_resolvers ||= []
   end
 
-  def initialize(file: nil, env: ENV)
-    bind_config_file(file) if file
+  def initialize(env: ENV, **options)
+    bind_config_file(options)
     bind_environment(env)
   end
 
   private
 
-  def bind_config_file(path)
-    source = Sources::File.new(path)
+  def bind_config_file(options)
+    source = Sources::File.new(options)
 
     bind_source(:file, source)
   end
