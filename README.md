@@ -13,8 +13,6 @@ yellow = "mustard"
 but you want only some environment variables to override these. Tell us your decisions like so:
 ```ruby
 class ColorsConfig < BlendedConfig
-  toml '.colors.toml'
-  
   group(:colors) do
     option(:blue)   { env  || file }               # pretty standard
     option(:green)  { file || env }                # the reverse
