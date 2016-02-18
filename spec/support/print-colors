@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'pathname'
+require_relative 'config'
+
+config = Config.new(
+  file: Pathname.new(__FILE__).dirname/'config.toml'
+)
+
+%w(blue green red purple yellow).each do |color|
+  puts config.colors.send(color)
+end

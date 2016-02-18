@@ -13,18 +13,18 @@ class BlendedConfig
   end
 
   def self.option(name, &resolution)
-    resolver = OptionResolver.new(name, &resolution)
-    resolvers << resolver
+    option_resolver = OptionResolver.new(name, &resolution)
+    option_resolvers << option_resolver
 
-    define_method(name) { resolver }
+    define_method(name) { option_resolver }
   end
 
   def self.option_groups
     @option_groups ||= []
   end
 
-  def self.resolvers
-    @resolvers ||= []
+  def self.option_resolvers
+    @option_resolvers ||= []
   end
 
   def initialize(file: nil, env: ENV)

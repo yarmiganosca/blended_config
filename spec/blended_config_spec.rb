@@ -3,7 +3,7 @@ require_relative 'support/config.rb'
 
 RSpec.describe BlendedConfig do
   describe 'toml configs' do
-    let(:config_file) { Pathname.new(__FILE__).dirname/'support'/'toml_config.toml' }
+    let(:config_file) { Pathname.new(__FILE__).dirname/'support'/'config.toml' }
     let(:environment) do
       OpenStruct.new(
         COLORS_BLUE:   "indigo",
