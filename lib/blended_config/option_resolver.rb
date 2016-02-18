@@ -2,14 +2,14 @@ require 'blended_config/sources/environment'
 
 class BlendedConfig
   class OptionResolver
-    def initialize(name, &lookup_preference)
-      @name              = name
-      @lookup_preference = lookup_preference
-      @sources           = {}
+    def initialize(name, &resolution)
+      @name       = name
+      @resolution = resolution
+      @sources    = {}
     end
 
     def value
-      instance_exec(&@lookup_preference)
+      instance_exec(&@resolution)
     end
 
     def file
