@@ -17,7 +17,7 @@ class ColorsConfig < BlendedConfig
     option(:blue)   { env  || file } # pretty standard
     option(:green)  { file || env } # the reverse
     option(:red)    { env  || 'brick' } # never read from env vars, but have a default
-    optino(:purple) { file || 'plum' } # only read from the environment, with a default
+    option(:purple) { file || 'plum' } # only read from the environment, with a default
     option(:yellow) { env  || file || 'marigold' } # try everything first
   end
 end
