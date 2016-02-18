@@ -13,12 +13,14 @@ yellow = "mustard"
 but you want only some environment variables to override these. Tell us your decisions like so:
 ```ruby
 class ColorsConfig < BlendedConfig
+  toml '.colors.toml'
+  
   group(:colors) do
-    option(:blue)   { env  || file } # pretty standard
-    option(:green)  { file || env } # the reverse
-    option(:red)    { env  || 'brick' } # never read from env vars, but have a default
-    option(:purple) { file || 'plum' } # only read from the environment, with a default
-    option(:yellow) { env  || file || 'marigold' } # try everything first
+    option(:blue)   { env  || file }               # pretty standard
+    option(:green)  { file || env }                # the reverse
+    option(:red)    { env  || 'brick' }            # never read from file, but have a default
+    option(:purple) { file || 'plum' }             # only read from the file, with a default
+    option(:yellow) { env  || file || 'marigold' } # try everything
   end
 end
 ```
