@@ -9,14 +9,19 @@ class BlendedConfig
     option_group = OptionGroup.new(name, &options)
     option_groups << option_group
 
-    define_method(name) { option_group }
+    define_method(name) do
+      option_group.fallback = self
+      option_group
+    end
   end
 
   def self.option(name, &resolution)
     option_resolver = OptionResolver.new(name, &resolution)
     option_resolvers << option_resolver
 
-    define_method(name) { option_resolver }
+    define_method(name) do
+      option_resolver.fallback = self
+    end
   end
 
   def self.option_groups
@@ -52,5 +57,5 @@ class BlendedConfig
     self.class.option_groups.each do |option_group|
       option_group.bind_source(key, source)
     end
-  end    
+  end
 end

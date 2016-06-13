@@ -6,7 +6,6 @@ RSpec.describe 'colors print' do
     {
       "COLORS_BLUE"   => "indigo",
       "COLORS_GREEN"  => "lime",
-      "COLORS_RED"    => "crimson",
       "COLORS_YELLOW" => "mustard"
     }
   end
@@ -15,7 +14,7 @@ RSpec.describe 'colors print' do
     <<-OUT
 indigo
 lime
-crimson
+brick
 aubergine
 mustard
     OUT
